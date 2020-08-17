@@ -61,14 +61,14 @@ Gatsby a plusieurs processus. Le plus important est le processus de "bootstrap".
 
 Le processus d'amorçage est le suivant:
 
-load site config -> load plugins -> source nodes -> transform nodes -> create graphql schema -> create pages -> compile component queries -> run queries -> fin
+charger la configuration du site -> charger des plugins -> nœuds source -> transformer les nœuds -> créer un schéma graphql -> créer des pages -> compiler des requêtes de composants -> exécuter des requêtes -> fin
 
-Once the initial bootstrap is finished, a `webpack-dev-server` and express server are started for serving files for the development workflow with live updates. For a production build, Gatsby skips the development server and instead builds the CSS, then JavaScript, then static HTML with webpack.
+Une fois le bootstrap initial terminé, un `webpack-dev-server` et un serveur express sont démarrés pour servir les fichiers pour le workflow de développement avec des mises à jour en direct. Pour une version de production, Gatsby ignore le serveur de développement et construit à la place le CSS, puis le JavaScript, puis le HTML statique avec webpack.
 
-During these processes there are various extension points where plugins can intervene. All major processes have an `onPre` and `onPost` e.g. `onPreBootstrap` and `onPostBootstrap` or `onPreBuild` or `onPostBuild`. During bootstrap plugins can respond at various stages to APIs like `onCreatePages`, `onCreateBabelConfig`, and `onSourceNodes`.
+Au cours de ces processus, il existe différents points d'extension où les plugins peuvent intervenir. Tous les processus majeurs ont un `onPre` et `onPost` par exemple `onPreBootstrap` et `onPostBootstrap` ou `onPreBuild` ou `onPostBuild`. Pendant le bootstrap, les plugins peuvent répondre à différentes étapes aux API telles que `onCreatePages`, `onCreateBabelConfig`, et `onSourceNodes`.
 
-At each extension point, Gatsby identifies the plugins which implement the API and calls them in serial following their order in the site's `gatsby-config.js`.
+A chaque point d'extension, Gatsby identifie les plugins qui implémentent l'API et les appelle en série en suivant leur ordre dans le site `gatsby-config.js`.
 
-In addition to extension APIs in a node, plugins can also implement extension APIs in the server rendering process and the browser e.g. `onClientEntry` or `onRouteUpdate`.
+En plus des API d'extension dans un nœud, les plugins peuvent également implémenter des API d'extension dans le processus de rendu du serveur et le navigateur, par exemple `onClientEntry` ou `onRouteUpdate`.
 
-The three main inspirations for this API and spec are React.js' API specifically [@leebyron's email on the React API](https://gist.github.com/vjeux/f2b015d230cc1ab18ed1df30550495ed), this talk ["How to Design a Good API and Why it Matters" by Joshua Bloch](https://www.youtube.com/watch?v=heh4OeB9A-c&app=desktop) who designed many parts of Java, and [Hapi.js](https://hapijs.com/api)' plugin design.
+Les trois principales inspirations pour cette API et cette spécification sont l'API de React.js spécifiquement [@leebyron's email on the React API](https://gist.github.com/vjeux/f2b015d230cc1ab18ed1df30550495ed), ce discours ["How to Design a Good API and Why it Matters" by Joshua Bloch](https://www.youtube.com/watch?v=heh4OeB9A-c&app=desktop) qui a conçu de nombreuses parties de Java, et [Hapi.js](https://hapijs.com/api)' conception de plugin.
