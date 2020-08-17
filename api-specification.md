@@ -1,14 +1,14 @@
 ---
-title: API Specification
+titre: Spécification API
 ---
 
-Gatsby's APIs are tailored conceptually to some extent after React.js to improve the coherence between the two systems.
+Les API de Gatsby sont conçues conceptuellement dans une certaine mesure après React.js pour améliorer la cohérence entre les deux systèmes.
 
-The two top priorities of the API are a) enable a broad and robust plugin ecosystem and b) on top of that a broad and robust theme ecosystem.
+Les deux principales priorités de l'API sont a) permettre un écosystème de plugins large et robuste et b) en plus de cela, un écosystème de thèmes large et robuste.
 
-## Prerequisites
+## Conditions préalables
 
-If you’re not familiar with Gatsby’s lifecycle, see the overview [Gatsby Lifecycle APIs](/docs/gatsby-lifecycle-apis/).
+Si vous n'êtes pas familiarisé avec le cycle de vie de Gatsby, consultez la présentation [API Gatsby Lifecycle] (/docs/gatsby-lifecycle-apis/).
 
 ## Plugins
 
