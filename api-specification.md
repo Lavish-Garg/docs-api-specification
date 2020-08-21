@@ -8,7 +8,7 @@ Les deux principales priorités de l'API sont a) permettre un écosystème de pl
 
 ## Conditions préalables
 
-Si vous ne connaissez pas le cycle de vie de Gatsby, consultez la présentation [Gatsby Lifecycle APIs](/docs/gatsby-lifecycle-apis/).
+Si vous ne connaissez pas le cycle de vie de Gatsby, consultez la présentation [API Gatsby Lifecycle](/docs/gatsby-lifecycle-apis/).
 
 ## Plugins
 
